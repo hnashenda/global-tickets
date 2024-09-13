@@ -18,11 +18,11 @@ This is a Laravel application. Follow the instructions below to set up and run t
 
 2. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/your-repository-name.git
+   git clone https://github.com/hnashenda/global-tickets
    ```
 3. **Navigate to the project directory**
    ```bash 
-   cd your-repository-name
+   cd global-tickets
    ```
 4. **Install PHP dependencies**
    ```bash 
