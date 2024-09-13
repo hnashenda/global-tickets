@@ -34,8 +34,8 @@ This is a Laravel application. Follow the instructions below to set up and run t
    ```bash 
    php artisan key:generate
 
-7. **Set up your database:**
-   ```bash 
+7. **Set up your database:** (dont forget the reseed) php artisan migrate:refresh --seed
+   
    - Open the .env file and configure the DB_* settings (e.g., DB_DATABASE, DB_USERNAME, DB_PASSWORD).
    - Run the migrations:
    ```bash
@@ -64,11 +64,113 @@ Authorization: Bearer your-api-token
 Test following API Endpoints
 
 GET ALL Urls: 
-
+ ```bash
+    http://localhost:8000/api/url/
 GET Single URL
-
+    http://localhost:8000/api/url/{id} 
 POST/ADD URL
-
+    http://localhost:8000/api/url
 UPDATE URL:
-
+    http://localhost:8000/api/url/{id} 
 DELETE URL:
+    http://localhost:8000/api/url/{id} 
+
+    # Testing API Endpoints in Postman
+
+Once you have your API token, you can test the following API endpoints using Postman:
+
+---
+
+### 1. GET All URLs
+
+- **Method**: GET  
+- **Endpoint**: `/api/url`  
+- **Description**: Retrieves a list of all URLs for the authenticated user.  
+- **Authorization**: Add the API token in the `Authorization` header.
+
+Example Request:
+
+```http
+GET http://localhost:8000/api/url
+
+# Testing API Endpoints in Postman
+
+Once you have your API token, you can test the following API endpoints using Postman:
+
+---
+
+### 1. GET All URLs
+
+- **Method**: GET  
+- **Endpoint**: `/api/url`  
+- **Description**: Retrieves a list of all URLs for the authenticated user.  
+- **Authorization**: Add the API token in the `Authorization` header.
+
+Example Request:
+
+```http
+GET http://localhost:8000/api/url
+
+### 2. GET Single URL
+
+- **Method**: GET  
+- **Endpoint**: `/api/url/{id}`  
+- **Description**: Fetch a specific URL by its ID. 
+- **Authorization**: Add the API token in the `Authorization` header.
+
+Example Request:
+
+```http
+GET http://localhost:8000/api/url/1
+
+### 3. POST / Add a New URL
+
+- **Method**: GET  
+- **Endpoint**: `/api/url/`  
+- **Description**: Create a new shortened URL. 
+- **Authorization**: Add the API token in the `Authorization` header.
+- **Body**: Send data as JSON in the request body.
+
+Example Request Body:
+
+```http
+{
+  "target_url": "https://example.com",
+  "shortened_url": "example"
+}
+
+Example Request:
+```http
+POST http://localhost:8000/api/url
+
+### 4. UPDATE an Existing URL
+
+- **Method**: PUT or PATCH 
+- **Endpoint**: `/api/url/{id}`  
+- **Description**: Update the target or shortened URL for a specific URL by its ID.
+- **Authorization**: Add the API token in the `Authorization` header.
+- **Body**: Send updated data as JSON in the request body.
+
+Example Request Body:
+
+```http
+{
+  "target_url": "https://updated-example.com",
+  "shortened_url": "example-update"
+}
+
+Example Request:
+```http
+PUT http://localhost:8000/api/url/1
+
+### 5. DELETE a URL
+
+- **Method**: DELETE  
+- **Endpoint**: `/api/url{id}`  
+- **Description**: Delete a specific URL by its ID. 
+- **Authorization**: Add the API token in the `Authorization` header.
+
+Example Request:
+
+```http
+DELETE http://localhost:8000/api/url/1
