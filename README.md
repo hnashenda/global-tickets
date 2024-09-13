@@ -56,7 +56,7 @@ Prerequisites:
     ```
 10. **Run Laravel Mix to compile assets (optional for front-end assets):**
    ```bash 
-   npm run dev
+     npm run dev
    ```
 
 ## Testing the APIS
