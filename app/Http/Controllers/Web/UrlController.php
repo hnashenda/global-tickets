@@ -14,7 +14,8 @@ class UrlController extends Controller
         $urls = Url::all();
         return view('url.index',compact('urls'));
         */
-        $urls = Url::where('user_id', auth()->id())->get(); //  URLs only for the authenticated user
+        //  URLs only for the authenticated user
+        $urls = Url::where('user_id', auth()->id())->get(); 
         return view('url.index', compact('urls'));
     }
 

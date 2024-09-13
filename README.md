@@ -3,49 +3,58 @@
 This is a Laravel application. Follow the instructions below to set up and run the application.
 
 ## Prerequisites
-- PHP >= 7.4 (or as required by your project)
+- PHP >= 8.2.18 (or as required by your project)
 - Composer
-- MySQL (or any other database you're using)
+- MySQL 
 - Node.js & npm (for front-end assets and Laravel Mix)
-
+- wamp : Ensure that WAMP is installed on your system to run Apache, MySQL, and PHP.
 ## Installation
 
-1. **Clone the repository**
+//  URLs only for the authenticated user
+Prerequisites:
+
+
+
+
+1. **Use WAMP to start Apache and MySQL services.**
+   Starting the Services
+
+2. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/your-repository-name.git
 
-2. **Navigate to the project directory**
+3. **Navigate to the project directory**
    ```bash 
    cd your-repository-name
 
-3. **Install PHP dependencies**
+4. **Install PHP dependencies**
    ```bash 
    composer install   
 
-4. **Install Node.js dependencies**
+5. **Install Node.js dependencies**
    ```bash 
    npm install
 
-5. **Copy .env.example to .env**
+6. **Copy .env.example to .env**
    ```bash 
    cp .env.example .env
 
-6. **Generate the application key**
+7. **Generate the application key**
    ```bash 
    php artisan key:generate
 
-7. **Set up your database:** (dont forget the reseed) php artisan migrate:refresh --seed
+8. **Set up your database:** (dont forget the reseed) php artisan migrate:refresh --seed
    
    - Open the .env file and configure the DB_* settings (e.g., DB_DATABASE, DB_USERNAME, DB_PASSWORD).
    - Run the migrations:
    ```bash
    php artisan migrate 
 
-8. **Run the application:**
+9. **Run the application:**
    ```bash 
    php artisan serve
 
-9. **Run Laravel Mix to compile assets (optional for front-end assets):**
+10. **Run Laravel Mix to compile assets (optional for front-end assets):**
    ```bash 
    npm run dev
 
@@ -74,10 +83,10 @@ Once you have your API token, you can test the following API endpoints using Pos
 - **Authorization**: Add the API token in the `Authorization` header.
 
 Example Request:
-
+```bash 
 http
 GET http://localhost:8000/api/url
-
+```
 ### 2. GET Single URL
 
 - **Method**: GET  
@@ -86,10 +95,10 @@ GET http://localhost:8000/api/url
 - **Authorization**: Add the API token in the `Authorization` header.
 
 Example Request:
-
+```bash 
 http
 GET http://localhost:8000/api/url/1
-
+```
 ### 3. POST / Add a New URL
 
 - **Method**: GET  
@@ -99,17 +108,19 @@ GET http://localhost:8000/api/url/1
 - **Body**: Send data as JSON in the request body.
 
 Example Request Body:
-
+```bash 
 http
 {
   "target_url": "https://example.com",
   "shortened_url": "example"
 }
+```
 
 Example Request:
+```bash 
 http
 POST http://localhost:8000/api/url
-
+```
 ### 4. UPDATE an Existing URL
 
 - **Method**: PUT or PATCH 
@@ -119,17 +130,18 @@ POST http://localhost:8000/api/url
 - **Body**: Send updated data as JSON in the request body.
 
 Example Request Body:
-
+```bash 
 http
 {
   "target_url": "https://updated-example.com",
   "shortened_url": "example-update"
 }
-
+```
 Example Request:
+```bash 
 http
 PUT http://localhost:8000/api/url/1
-
+```
 ### 5. DELETE a URL
 
 - **Method**: DELETE  
@@ -138,7 +150,17 @@ PUT http://localhost:8000/api/url/1
 - **Authorization**: Add the API token in the `Authorization` header.
 
 Example Request:
-
+```bash 
 http
 DELETE http://localhost:8000/api/url/1
+```
+## Postman Setup for API Requests
+### Headers:
 
+Go to the Headers section in Postman.
+Add a header called Authorization and set its value to Bearer your-api-token.
+Content Type:
+For POST and PUT requests, set the Content-Type header to application/json in the Headers section.
+
+Body:
+For POST and PUT requests, make sure to choose raw in the body section and select JSON from the dropdown.
