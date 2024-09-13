@@ -62,10 +62,7 @@ Users are able to do the following:
    ```bash 
    php artisan serve
     ```
-10. **Run Laravel Mix to compile assets (optional for front-end assets):**
-   ```bash 
-     npm run dev
-   ```
+
 
 ## Testing the APIS
 
