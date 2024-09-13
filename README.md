@@ -58,7 +58,7 @@ Prerequisites:
    ```bash 
    npm run dev
    ```
-   
+
 ## Testing the APIS
 
 Once logged in the system generates an Access API Token 
@@ -159,9 +159,14 @@ DELETE http://localhost:8000/api/url/1
 ### Headers:
 
 Go to the Headers section in Postman.
-Add a header called Authorization and set its value to Bearer your-api-token.
-Content Type:
-For POST and PUT requests, set the Content-Type header to application/json in the Headers section.
 
+Add a header called Authorization and set its value to Bearer your-api-token.
+
+Content Type:
+```bash 
+For POST and PUT requests, set the Content-Type header to application/json in the Headers section.
+```
 Body:
+```bash 
 For POST and PUT requests, make sure to choose raw in the body section and select JSON from the dropdown.
+```
