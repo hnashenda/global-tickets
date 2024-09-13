@@ -1,6 +1,12 @@
 # Global Tickets Assessment
 
-This is a Laravel application. Follow the instructions below to set up and run the application.
+This is a Laravel application centered around the management of shortened URLs. 
+Users are able to do the following:
+- register and login
+- access to a URL Management dashboard displaying all the shortened URLs
+- URL Manipulation Features: Users can create, edit and delete their shortened URLs
+- Redirection Functionality: the application enables redirection from the shortened URL to the specified target URL
+- API Functionality for CRUD Operations. Api can be accessed at http://localhost:8000/api/url
 
 ## Prerequisites
 - PHP >= 8.2.18 (or as required by your project)
