@@ -45,7 +45,7 @@ This is a Laravel application. Follow the instructions below to set up and run t
    - Open the .env file and configure the DB_* settings (e.g., DB_DATABASE, DB_USERNAME, DB_PASSWORD).
    - Run the migrations and seed to create default user and urls:
    ```bash
-   php artisan migrate php artisan migrate:fresh --seed
+   php artisan migrate:fresh --seed
    ```
    Default user:
    ```bash
