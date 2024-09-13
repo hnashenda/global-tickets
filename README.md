@@ -61,14 +61,10 @@ For authenticated API routes, include the token in the Authorization header as f
 
 Authorization: Bearer your-api-token
 
-Test following API Endpoints
-
-
-    # Testing API Endpoints in Postman
+Test following API Endpoints  
 
 Once you have your API token, you can test the following API endpoints using Postman:
 
----
 
 ### 1. GET All URLs
 
@@ -79,25 +75,7 @@ Once you have your API token, you can test the following API endpoints using Pos
 
 Example Request:
 
-```http
-GET http://localhost:8000/api/url
-
-# Testing API Endpoints in Postman
-
-Once you have your API token, you can test the following API endpoints using Postman:
-
----
-
-### 1. GET All URLs
-
-- **Method**: GET  
-- **Endpoint**: `/api/url`  
-- **Description**: Retrieves a list of all URLs for the authenticated user.  
-- **Authorization**: Add the API token in the `Authorization` header.
-
-Example Request:
-
-```http
+http
 GET http://localhost:8000/api/url
 
 ### 2. GET Single URL
@@ -109,7 +87,7 @@ GET http://localhost:8000/api/url
 
 Example Request:
 
-```http
+http
 GET http://localhost:8000/api/url/1
 
 ### 3. POST / Add a New URL
@@ -122,13 +100,45 @@ GET http://localhost:8000/api/url/1
 
 Example Request Body:
 
-```http
+http
 {
   "target_url": "https://example.com",
   "shortened_url": "example"
 }
 
 Example Request:
-```http
+http
 POST http://localhost:8000/api/url
+
+### 4. UPDATE an Existing URL
+
+- **Method**: PUT or PATCH 
+- **Endpoint**: `/api/url/{id}`  
+- **Description**: Update the target or shortened URL for a specific URL by its ID.
+- **Authorization**: Add the API token in the `Authorization` header.
+- **Body**: Send updated data as JSON in the request body.
+
+Example Request Body:
+
+http
+{
+  "target_url": "https://updated-example.com",
+  "shortened_url": "example-update"
+}
+
+Example Request:
+http
+PUT http://localhost:8000/api/url/1
+
+### 5. DELETE a URL
+
+- **Method**: DELETE  
+- **Endpoint**: `/api/url{id}`  
+- **Description**: Delete a specific URL by its ID. 
+- **Authorization**: Add the API token in the `Authorization` header.
+
+Example Request:
+
+http
+DELETE http://localhost:8000/api/url/1
 
