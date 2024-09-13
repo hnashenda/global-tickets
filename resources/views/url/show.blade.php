@@ -1,3 +1,7 @@
+{{-- 
+    This view is to show the details fot a single url
+--}}
+
 @extends('layouts.app')
 
 @section('content')
@@ -17,12 +21,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr>                     
                     <td>Target URL</td>
+                    <!-- The original or long url -->
                     <td>{{$url->target_url}}</td>
                 </tr>
-                <tr>
+                <tr>                    
                     <td>Shortened URL</td>
+                     <!-- The shortened url -->
                     <td>{{$url->shortened_url}}</td>
                 </tr>
             </tbody>

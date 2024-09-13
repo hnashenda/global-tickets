@@ -15,10 +15,16 @@ class CreateUrl extends Migration
     {
         Schema::create('urls', function (Blueprint $table) {
             $table->id();
-            $table->string('target_url', 191)->unique(); // Ensuring target_url is unique with max length of 191
-            $table->string('shortened_url', 191)->unique(); // Ensuring shortened_url is unique with max length of 191
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Foreign key to users table, cascading on delete
+            $table->string('target_url', 191); 
+            $table->string('shortened_url', 191); 
+            // Foreign key to users table, cascading on delete
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             $table->timestamps();
+
+            // Create a composite unique index on user_id, target_url, and shortened_url
+            // Ensures that a user cannot have the same target_url or shortened_url multiple times
+            $table->unique(['user_id', 'target_url']);
+            $table->unique(['user_id', 'shortened_url']);
         });
     }
 

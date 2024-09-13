@@ -1,3 +1,6 @@
+{{-- 
+    This view is create the urls
+--}}
 @extends('layouts.app')
 
 @section('content')
@@ -14,6 +17,7 @@
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
+                        <!-- List errors eg.  when the input is not unique -->
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>

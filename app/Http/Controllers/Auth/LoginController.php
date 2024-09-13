@@ -39,6 +39,7 @@ class LoginController extends Controller
         $this->middleware('auth')->only('logout');
     }
 
+    // Generate a session access token when user logs in
     protected function authenticated(Request $request, $user)
     {
         // Generate Sanctum Token for the user
@@ -47,7 +48,7 @@ class LoginController extends Controller
         // Store the token in the session
         session(['api_token' => $token]);
 
-        // Redirect to the dashboard 
+        // Redirect to the dashboard, index view
         return redirect()->route('url.index');
     }
 }

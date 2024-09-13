@@ -1,3 +1,6 @@
+{{-- 
+    This view is to show the API token for the session
+--}}
 @extends('layouts.app')
 
 @section('content')

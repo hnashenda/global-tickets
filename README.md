@@ -10,10 +10,6 @@ This is a Laravel application. Follow the instructions below to set up and run t
 - wamp : Ensure that WAMP is installed on your system to run Apache, MySQL, and PHP.
 ## Installation
 
-//  URLs only for the authenticated user
-Prerequisites:
-
-
 
 
 1. **Use WAMP to start Apache and MySQL services.**
@@ -46,10 +42,15 @@ Prerequisites:
 8. **Set up your database:** (dont forget the reseed) php artisan migrate:refresh --seed
    
    - Open the .env file and configure the DB_* settings (e.g., DB_DATABASE, DB_USERNAME, DB_PASSWORD).
-   - Run the migrations:
+   - Run the migrations and seed to create default user and urls:
    ```bash
-   php artisan migrate 
+   php artisan migrate php artisan migrate:fresh --seed
    ```
+   Default user:
+   ```bash
+      username: hubert@tester.com
+      password: password
+   ```   
 9. **Run the application:**
    ```bash 
    php artisan serve
@@ -76,7 +77,7 @@ Test following API Endpoints
 Once you have your API token, you can test the following API endpoints using Postman:
 
 
-### 1. GET All URLs
+**1. GET All URLs**
 
 - **Method**: GET  
 - **Endpoint**: `/api/url`  
@@ -85,10 +86,10 @@ Once you have your API token, you can test the following API endpoints using Pos
 
 Example Request:
 ```bash 
-http
+
 GET http://localhost:8000/api/url
 ```
-### 2. GET Single URL
+**2. GET Single URL**
 
 - **Method**: GET  
 - **Endpoint**: `/api/url/{id}`  
@@ -97,10 +98,10 @@ GET http://localhost:8000/api/url
 
 Example Request:
 ```bash 
-http
+
 GET http://localhost:8000/api/url/1
 ```
-### 3. POST / Add a New URL
+**3. POST / Add a New URL**
 
 - **Method**: GET  
 - **Endpoint**: `/api/url/`  
@@ -110,7 +111,7 @@ GET http://localhost:8000/api/url/1
 
 Example Request Body:
 ```bash 
-http
+
 {
   "target_url": "https://example.com",
   "shortened_url": "example"
@@ -119,10 +120,10 @@ http
 
 Example Request:
 ```bash 
-http
+
 POST http://localhost:8000/api/url
 ```
-### 4. UPDATE an Existing URL
+**4. UPDATE an Existing URL**
 
 - **Method**: PUT or PATCH 
 - **Endpoint**: `/api/url/{id}`  
@@ -132,7 +133,7 @@ POST http://localhost:8000/api/url
 
 Example Request Body:
 ```bash 
-http
+
 {
   "target_url": "https://updated-example.com",
   "shortened_url": "example-update"
@@ -140,10 +141,10 @@ http
 ```
 Example Request:
 ```bash 
-http
+
 PUT http://localhost:8000/api/url/1
 ```
-### 5. DELETE a URL
+**5. DELETE a URL**
 
 - **Method**: DELETE  
 - **Endpoint**: `/api/url{id}`  
@@ -152,7 +153,7 @@ PUT http://localhost:8000/api/url/1
 
 Example Request:
 ```bash 
-http
+
 DELETE http://localhost:8000/api/url/1
 ```
 ## Postman Setup for API Requests
