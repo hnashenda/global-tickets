@@ -22,38 +22,38 @@ Prerequisites:
 2. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/your-repository-name.git
-
+   ```
 3. **Navigate to the project directory**
    ```bash 
    cd your-repository-name
-
+   ```
 4. **Install PHP dependencies**
    ```bash 
    composer install   
-
+   ```
 5. **Install Node.js dependencies**
    ```bash 
    npm install
-
+   ```
 6. **Copy .env.example to .env**
    ```bash 
    cp .env.example .env
-
+   ```
 7. **Generate the application key**
    ```bash 
    php artisan key:generate
-
+   ```
 8. **Set up your database:** (dont forget the reseed) php artisan migrate:refresh --seed
    
    - Open the .env file and configure the DB_* settings (e.g., DB_DATABASE, DB_USERNAME, DB_PASSWORD).
    - Run the migrations:
    ```bash
    php artisan migrate 
-
+   ```
 9. **Run the application:**
    ```bash 
    php artisan serve
-
+    ```
 10. **Run Laravel Mix to compile assets (optional for front-end assets):**
    ```bash 
    npm run dev
