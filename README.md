@@ -13,7 +13,8 @@ This is a Laravel application. Follow the instructions below to set up and run t
 
 
 1. **Use WAMP to start Apache and MySQL services.**
-   Starting the Services
+   
+   Start the Services
 
 2. **Clone the repository**
    ```bash
