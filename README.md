@@ -63,17 +63,6 @@ Authorization: Bearer your-api-token
 
 Test following API Endpoints
 
-GET ALL Urls: 
- ```bash
-    http://localhost:8000/api/url/
-GET Single URL
-    http://localhost:8000/api/url/{id} 
-POST/ADD URL
-    http://localhost:8000/api/url
-UPDATE URL:
-    http://localhost:8000/api/url/{id} 
-DELETE URL:
-    http://localhost:8000/api/url/{id} 
 
     # Testing API Endpoints in Postman
 
@@ -143,34 +132,3 @@ Example Request:
 ```http
 POST http://localhost:8000/api/url
 
-### 4. UPDATE an Existing URL
-
-- **Method**: PUT or PATCH 
-- **Endpoint**: `/api/url/{id}`  
-- **Description**: Update the target or shortened URL for a specific URL by its ID.
-- **Authorization**: Add the API token in the `Authorization` header.
-- **Body**: Send updated data as JSON in the request body.
-
-Example Request Body:
-
-```http
-{
-  "target_url": "https://updated-example.com",
-  "shortened_url": "example-update"
-}
-
-Example Request:
-```http
-PUT http://localhost:8000/api/url/1
-
-### 5. DELETE a URL
-
-- **Method**: DELETE  
-- **Endpoint**: `/api/url{id}`  
-- **Description**: Delete a specific URL by its ID. 
-- **Authorization**: Add the API token in the `Authorization` header.
-
-Example Request:
-
-```http
-DELETE http://localhost:8000/api/url/1
